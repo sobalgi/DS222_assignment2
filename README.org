@@ -1,0 +1,55 @@
+# DS222_Assignment1
+Naive Bayes classifier implementation for DBPedia dataset with 50 classes
+
+** Installation
+Simply clone this repository via
+
+#+BEGIN_SRC sh
+  git clone https://github.com/sobalgi/DS222_Assignment1.git
+#+END_SRC
+
+** Dependencies
+- Python 3 with NumPy
+- NLTK (to remove stopwords and lemmatize data.)
+- Hadoop Streaming
+
+This consists of 2 parts each included in separate folder after latest code refactoring.
+
+#+BEGIN_SRC sh
+  cd part1_nb
+  ./train_n_log_accuracies.sh
+#+END_SRC
+To reproduce or run the In-Memory implementation and generate logs.
+
+
+'part1_nb' folder has the code files and generated log files for In-Memory implementation.
+the log file included train, development and test accuracies on all size of dataset( verysmall, small and full).
+
+Also the execution times for training only, training accuracy, development accuracy and testing accuracy are logged individually for better comparisions.
+
+#+BEGIN_SRC sh
+  cd part2_mapred
+  ./training.sh NumReducers  # for training only. Model parameters are obtained here.
+  ./find_accuracy.sh NumReducers DataSplit
+  
+#+END_SRC
+where NumReducers indicates the number of reducers to be used for the job like 1, 2, 5, 8 or 10.
+DataSplit is the name of the Datasplit to be used for inference and accuracy like 'train, devel or test'
+
+Note : please modify the input directory path in the .sh files to point to the right directory with the train, development and test data files.
+
+#+BEGIN_SRC sh
+  ./training.sh 10  # for training only. Model parameters are obtained here.
+  ./find_accuracy.sh 10 devel
+#+END_SRC
+
+'part2_mapred' folder has the codes for mapreduce implementation and appropriate logs for the number of reducers for the jobs set as 1, 2, 5, 8 and 10. The exact log files were logged from terminal using 'nohup' for correctness and automation.
+
+#+BEGIN_SRC sh
+  nohup ./training.sh 10 > word_model_010.log # for training only. Model parameters are obtained here.
+  nohup ./find_accuracy.sh 10 devel > devel_accuracy_010.log
+#+END_SRC
+
+The detailed report is also included as 'DS222_as1_report.pdf'
+
+  
