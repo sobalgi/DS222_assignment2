@@ -402,7 +402,7 @@ for tst_idx, data in enumerate(tqdm(tst_data_full)):
 
     # remove stopwords
     filtered_words = [stemmer.stem(w) for w in words if not w in stop_words]
-    #filtered_words = [w for w in words if not w in stop_words]
+    # filtered_words = [w for w in words if not w in stop_words]
 
     # get the counts of words in test data
     test_word_counts = Counter(filtered_words)
@@ -419,7 +419,7 @@ for tst_idx, data in enumerate(tqdm(tst_data_full)):
         log_post_prob.append(post_prob_class)
         
     tst_predicted_label.append(dict_idx2label[np.argmax(log_post_prob)])
-    #print(f'\n{tst_idx}/{len(tst_data_full)} : Predicted Label : {dict_idx2label[np.argmax(log_post_prob)]} \nTrue Label : {tst_label_full[tst_idx]}')
+    # print(f'\n{tst_idx}/{len(tst_data_full)} : Predicted Label : {dict_idx2label[np.argmax(log_post_prob)]} \nTrue Label : {tst_label_full[tst_idx]}')
     
     if tst_predicted_label[tst_idx] in tst_label_full[tst_idx]:
         tst_accuracy_count += 1
