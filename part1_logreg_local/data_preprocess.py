@@ -5,6 +5,7 @@ from tqdm import tqdm
 import numpy as np
 import nltk
 from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
 from collections import defaultdict
 from sklearn.preprocessing import MultiLabelBinarizer
 import h5py
@@ -25,15 +26,19 @@ def preprocess(mode, f):
     for line in tqdm(f.readlines()[3:]):
         labels = line.split(' \t')[0]
         line = line.split(' \t')[1].split('"')[1]
-        line = re.sub(r'http\S+', '', line)
-        line = re.sub(r"[-()\"#/@;%&$:<>{}`+=~|.!?,]", "", line)
-        line = line.lower()
-        line = re.sub("\d+", "",line)
-        line = re.sub('@en', '', line)  # remove end of sentence
-        line = re.sub('[^a-zA-Z]', ' ', line)  # remove all punctuations, special-char and digits
-        line = re.sub('\s+', ' ', line)  # replace multiple spaces
-        line = line.strip()  # replace multiple spaces
-        words = re.split(' ', line)        
+        m = re.findall('".*"@en', line.lower())
+        # data_str = re.sub('\\\\\w\d*', ' ', m[0])  # remove tags
+        data_str = bytes(m[0], 'utf-8').decode("unicode_escape")
+        data_str = re.sub('@en', '', data_str)  # remove end of sentence
+        data_str = re.sub('[^a-zA-Z]', ' ', data_str)  # remove all punctuations, special-char and digits
+        data_str = re.sub('\s+', ' ', data_str)  # replace multiple spaces
+        data_str = data_str.strip()  # replace multiple spaces
+
+        # tokenize, remove stopwords and stem
+
+        # tokenize
+        words = word_tokenize(data_str)
+
         text[countDocuments] = line
         
         if mode == 'train':

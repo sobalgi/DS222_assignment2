@@ -53,7 +53,7 @@ def accuracy(predicted_labels, labels):
 
 
 init = tf.global_variables_initializer()
-writer = tf.summary.FileWriter('./graphs/logreg', tf.get_default_graph())
+writer = tf.summary.FileWriter('./plots/logreg', tf.get_default_graph())
 
 with tf.Session() as sess:
     start = time.time()
