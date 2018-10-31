@@ -25,21 +25,17 @@ def preprocess(mode, f):
 
     for line in tqdm(f.readlines()[3:]):
         labels = line.split(' \t')[0]
-        line = line.split(' \t')[1].split('"')[1]
-        m = re.findall('".*"@en', line.lower())
-        # data_str = re.sub('\\\\\w\d*', ' ', m[0])  # remove tags
-        data_str = bytes(m[0], 'utf-8').decode("unicode_escape")
+        data_str = line.split(' \t')[1].split('"')[1]
+        data_str = re.sub(r'http\S+', '', data_str)
+        data_str = re.sub(r"[-()\"#/@;%&$:<>{}`+=~|.!?,]", "", data_str)
+        data_str = data_str.lower()
+        data_str = re.sub("\d+", "", data_str)
         data_str = re.sub('@en', '', data_str)  # remove end of sentence
         data_str = re.sub('[^a-zA-Z]', ' ', data_str)  # remove all punctuations, special-char and digits
         data_str = re.sub('\s+', ' ', data_str)  # replace multiple spaces
         data_str = data_str.strip()  # replace multiple spaces
-
-        # tokenize, remove stopwords and stem
-
-        # tokenize
-        words = word_tokenize(data_str)
-
-        text[countDocuments] = line
+        words = re.split(' ', data_str)
+        text[countDocuments] = data_str
         
         if mode == 'train':
             for word in words: 
