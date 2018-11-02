@@ -1,119 +1,119 @@
-sourabhbalgi@turing:~/prj/DS222_assignment2/part1_logreg_local$ python logreg_local_sgd.py --decay_type 'const'
- Data Loading ... 
+sourabhbalgi@turing:~/prj/DS222_assignment2/part1_logreg_local/plots/logreg$ cat inc.log 
+sourabhbalgi@turing:~/prj/DS222_assignment2/part1_logreg_local$ python logreg_local_sgd.py --decay_type 'inc'
+ Data Loading ...
 
 train data shape: (214994, 8077)
 train label data shape: (214994, 50)
 
- Defining the graph ... 
+ Defining the graph ...
 
-2018-10-31 19:08:30.144467: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-Average loss epoch 0: 968.326895084
-0.02
-Average loss epoch 1: 165.330469815
-0.02
-Average loss epoch 2: 31.8496745487
-0.02
-Average loss epoch 3: 7.76412477133
-0.02
-Average loss epoch 4: 3.3665532436
-0.02
-Average loss epoch 5: 2.52766198482
-0.02
-Average loss epoch 6: 2.38604699441
-0.02
-Average loss epoch 7: 2.23041928039
-0.02
-Average loss epoch 8: 2.3233335558
-0.02
-Average loss epoch 9: 2.35094446506
-0.02
-Average loss epoch 10: 2.39184708415
-0.02
-Average loss epoch 11: 2.3837591882
-0.02
-Average loss epoch 12: 2.33670795189
-0.02
-Average loss epoch 13: 2.34910374767
-0.02
-Average loss epoch 14: 2.38718590197
-0.02
-Average loss epoch 15: 2.38748787034
-0.02
-Average loss epoch 16: 2.3628475891
-0.02
-Average loss epoch 17: 2.40871157736
-0.02
-Average loss epoch 18: 2.4319776589
-0.02
-Average loss epoch 19: 2.41834615312
-0.02
-Average loss epoch 20: 2.20793685823
-0.02
-Average loss epoch 21: 2.28499215504
-0.02
-Average loss epoch 22: 2.30610866367
-0.02
-Average loss epoch 23: 2.36730507185
-0.02
-Average loss epoch 24: 1.86992859166
-0.02
-Average loss epoch 25: 1.82172413367
-0.02
-Average loss epoch 26: 1.85045968811
-0.02
-Average loss epoch 27: 1.99395329098
-0.02
-Average loss epoch 28: 1.94625772845
-0.02
-Average loss epoch 29: 1.9826059184
-0.02
-Average loss epoch 30: 1.99256886626
-0.02
-Average loss epoch 31: 1.59596365128
-0.02
-Average loss epoch 32: 0.623438174994
-0.02
-Average loss epoch 33: 1.50267864623
-0.02
-Average loss epoch 34: 2.1297668421
-0.02
-Average loss epoch 35: 2.20684537798
-0.02
-Average loss epoch 36: 2.23926581977
-0.02
-Average loss epoch 37: 2.16124093757
-0.02
-Average loss epoch 38: 2.22657003043
-0.02
-Average loss epoch 39: 2.13540130291
-0.02
-Average loss epoch 40: 2.1940360879
-0.02
-Average loss epoch 41: 2.19765000523
-0.02
-Average loss epoch 42: 2.09962010833
-0.02
-Average loss epoch 43: 1.59190369777
-0.02
-Average loss epoch 44: 1.50559841687
-0.02
-Average loss epoch 45: 1.28721099755
-0.02
-Average loss epoch 46: 1.89690951131
-0.02
-Average loss epoch 47: 2.30360491771
-0.02
-Average loss epoch 48: 2.23783630245
-0.02
-Average loss epoch 49: 2.11352701907
-0.02
-Total time: 448.912400007 seconds
+2018-10-31 19:19:29.805464: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Average loss epoch 0: 970.073224338
+0.021
+Average loss epoch 1: 161.306540723
+0.02205
+Average loss epoch 2: 28.0086904022
+0.0231525
+Average loss epoch 3: 6.16772985908
+0.0243101
+Average loss epoch 4: 2.86216023283
+0.0255256
+Average loss epoch 5: 2.38448864109
+0.0268019
+Average loss epoch 6: 2.34216961771
+0.028142
+Average loss epoch 7: 2.21374574697
+0.0295491
+Average loss epoch 8: 2.31041017568
+0.0310266
+Average loss epoch 9: 2.33002318076
+0.0325779
+Average loss epoch 10: 2.37505589341
+0.0342068
+Average loss epoch 11: 2.37259423508
+0.0359171
+Average loss epoch 12: 2.32600167562
+0.037713
+Average loss epoch 13: 2.33819232797
+0.0395986
+Average loss epoch 14: 2.37695214883
+0.0415785
+Average loss epoch 15: 2.37816091753
+0.0436575
+Average loss epoch 16: 2.35301924652
+0.0458403
+Average loss epoch 17: 2.39934964
+0.0481323
+Average loss epoch 18: 2.42241201761
+0.050539
+Average loss epoch 19: 2.41078659274
+0.0530659
+Average loss epoch 20: 2.19337772423
+0.0557192
+Average loss epoch 21: 2.269026131
+0.0585052
+Average loss epoch 22: 2.2989250534
+0.0614304
+Average loss epoch 23: 2.31974961173
+0.0645019
+Average loss epoch 24: 1.85461524298
+0.067727
+Average loss epoch 25: 1.81282108235
+0.0711134
+Average loss epoch 26: 1.84437559011
+0.074669
+Average loss epoch 27: 1.983788614
+0.0784025
+Average loss epoch 28: 1.90607884245
+0.0823226
+Average loss epoch 29: 1.96822117635
+0.0864387
+Average loss epoch 30: 1.98719924351
+0.0907607
+Average loss epoch 31: 1.55284047577
+0.0952987
+Average loss epoch 32: 0.589423510264
+0.100064
+Average loss epoch 33: 1.53128008573
+0.105067
+Average loss epoch 34: 2.10440807522
+0.11032
+Average loss epoch 35: 2.1896159379
+0.115836
+Average loss epoch 36: 2.22632308276
+0.121628
+Average loss epoch 37: 2.14244410677
+0.127709
+Average loss epoch 38: 2.20637273788
+0.134095
+Average loss epoch 39: 2.13148669477
+0.1408
+Average loss epoch 40: 2.24985904964
+0.147839
+Average loss epoch 41: 2.26355489245
+0.155231
+Average loss epoch 42: 2.10166310364
+0.162993
+Average loss epoch 43: 1.60068617452
+0.171143
+Average loss epoch 44: 1.49810232531
+0.1797
+Average loss epoch 45: 1.29724370758
+0.188685
+Average loss epoch 46: 1.91251487552
+0.198119
+Average loss epoch 47: 2.33642229494
+0.208025
+Average loss epoch 48: 2.30884519163
+0.218426
+Average loss epoch 49: 2.17695291987
+0.229347
+Total time: 525.136186838 seconds
  Testing phase...
-2018-10-31 19:15:59.059729: W tensorflow/core/framework/allocator.cc:113] Allocation of 6946026152 exceeds 10% of system memory.
-inside accuracy function ... 
+2018-10-31 19:28:14.944715: W tensorflow/core/framework/allocator.cc:113] Allocation of 6946026152 exceeds 10% of system memory.
+inside accuracy function ...
 
-('Train Accuracy', 52.61681721350363)
-2018-10-31 19:16:39.771308: W tensorflow/core/framework/allocator.cc:113] Allocation of 969046152 exceeds 10% of system memory.
-inside accuracy function ... 
+('Train Accuracy', 53.38335023302976)
+inside accuracy function ...
 
-Test Accuracy 58.0816163233
+Test Accuracy 57.9382543175
